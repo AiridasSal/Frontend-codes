@@ -175,11 +175,11 @@ const rooms = {
             ]
         },
         {
-            name: "Spalvotas kilimas",
+            name: "Kilimas",
             variations: [
-                { name: "Mažas Spalvotas kilimas", volume: 0.4, weight: 5, dimensions: { length: 0.5, width: 0.3, height: 0.05 } },
-                { name: "Vidutinis Spalvotas kilimas", volume: 0.6, weight: 8, dimensions: { length: 0.7, width: 0.4, height: 0.05 } },
-                { name: "Didelis Spalvotas kilimas", volume: 0.8, weight: 12, dimensions: { length: 0.9, width: 0.5, height: 0.05 } }
+                { name: "Mažas Kilimas", volume: 0.4, weight: 5, dimensions: { length: 0.5, width: 0.3, height: 0.05 } },
+                { name: "Vidutinis Kilimas", volume: 0.6, weight: 8, dimensions: { length: 0.7, width: 0.4, height: 0.05 } },
+                { name: "Didelis Kilimas", volume: 0.8, weight: 12, dimensions: { length: 0.9, width: 0.5, height: 0.05 } }
             ]
         }
 

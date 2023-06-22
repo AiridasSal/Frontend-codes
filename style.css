@@ -74,17 +74,34 @@ p {
     font-weight: bold;
 }
 
-select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f6f6f6;
-    font-size: 18px;
-    color: #333;
-    transition: border-color 0.3s ease;
-}
+.radio-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    grid-column: 2/3;
+    max-width: 550px;
 
-select:focus {
-    border-color: #03A9F4; /* Light blue color on focus */
+}
+.radio-container label{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.item-info button{
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+.item-info button:first-of-type{
+    position: relative;
+    top: -40px;
+}
+.item-info button:nth-of-type(2){
+    position: relative;
+    top: 40px;
+}
+.item-info{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr 0.1fr;
+}
+.item-name{
+   order: -1;
 }
