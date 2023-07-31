@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Form container */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .section {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .two-columns {
+        display: flex;
+      }
+
+      .column {
+        flex: 1;
+        padding: 10px;
+      }
+
+      /* Form heading */
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      /* Form fields */
+      label,
+      button {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      @media screen and (max-width: 600px) {
+        .two-columns {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Parcel Delivery Order Form</h1>
+
+    <h2>Siuntimo data</h2>
+    <label for="data">Data:</label>
+    <input type="date" id="data" name="data" required /><br />
+
+    <label for="kryptis">Kryptis:</label>
+    <select id="kryptis" name="kryptis" required>
+      <option value="lt_uk">Lietuva - Anglija</option>
+      <option value="uk_lt">Anglija - Lietuva</option></select
+    ><br />
+
+    <div id="additional_shipments">
+      <div class="additional-shipment">
+        <label for="papildoma_siunta_svoris_1">Siuntos svoris 1:</label>
+        <input
+          type="number"
+          id="papildoma_siunta_svoris_1"
+          name="papildoma_siunta_svoris_1"
+          required
+        />
+        <button type="button" onclick="removeAdditionalShipment(this)">
+          -
+        </button>
+      </div>
+    </div>
+    <button type="button" onclick="addAdditionalShipment()">
+      + Pridėti papildomą siuntą
+    </button>
+    <div class="two-columns">
+      <div class="column">
+        <h2>Siuntėjo</h2>
+        <label for="siuntejo_vardas">Vardas:</label>
+        <input
+          type="text"
+          id="siuntejo_vardas"
+          name="siuntejo_vardas"
+          required
+        /><br />
+
+        <label for="siuntejo_pavarde">Pavardė:</label>
+        <input
+          type="text"
+          id="siuntejo_pavarde"
+          name="siuntejo_pavarde"
+          required
+        /><br />
+
+        <label for="siuntejo_gatve">Gatvė:</label>
+        <input
+          type="text"
+          id="siuntejo_gatve"
+          name="siuntejo_gatve"
+          required
+        /><br />
+
+        <label for="siuntejo_namo_numeris">Namo numeris:</label>
+        <input
+          type="text"
+          id="siuntejo_namo_numeris"
+          name="siuntejo_namo_numeris"
+          required
+        /><br />
+
+        <label for="siuntejo_miestas">Miestas:</label>
+        <input
+          type="text"
+          id="siuntejo_miestas"
+          name="siuntejo_miestas"
+          required
+        /><br />
+
+        <label for="siuntejo_pasto_kodas">Pašto kodas:</label>
+        <input
+          type="text"
+          id="siuntejo_pasto_kodas"
+          name="siuntejo_pasto_kodas"
+          required
+        /><br />
+
+        <label for="siuntejo_el_pastas">El.paštas:</label>
+        <input
+          type="email"
+          id="siuntejo_el_pastas"
+          name="siuntejo_el_pastas"
+          required
+        /><br />
+      </div>
+      <div class="column">
+        <h2>Gavėjo</h2>
+        <label for="gavejo_vardas">Vardas:</label>
+        <input
+          type="text"
+          id="gavejo_vardas"
+          name="gavejo_vardas"
+          required
+        /><br />
+
+        <label for="gavejo_pavarde">Pavardė:</label>
+        <input
+          type="text"
+          id="gavejo_pavarde"
+          name="gavejo_pavarde"
+          required
+        /><br />
+
+        <label for="gavejo_gatve">Gatvė:</label>
+        <input
+          type="text"
+          id="gavejo_gatve"
+          name="gavejo_gatve"
+          required
+        /><br />
+
+        <label for="gavejo_namo_numeris">Namo numeris:</label>
+        <input
+          type="text"
+          id="gavejo_namo_numeris"
+          name="gavejo_namo_numeris"
+          required
+        /><br />
+
+        <label for="gavejo_miestas">Miestas:</label>
+        <input
+          type="text"
+          id="gavejo_miestas"
+          name="gavejo_miestas"
+          required
+        /><br />
+
+        <label for="gavejo_pasto_kodas">Pašto kodas:</label>
+        <input
+          type="text"
+          id="gavejo_pasto_kodas"
+          name="gavejo_pasto_kodas"
+          required
+        /><br />
+
+        <label for="gavejo_el_pastas">El.paštas:</label>
+        <input
+          type="email"
+          id="gavejo_el_pastas"
+          name="gavejo_el_pastas"
+          required
+        /><br />
+      </div>
+    </div>
+
+    <h2>Mokėtojas</h2>
+    <label for="moketojas">Siuntėjas arba gavėjas:</label>
+    <select id="moketojas" name="moketojas" required>
+      <option value="siuntejas">Siuntėjas</option>
+      <option value="gavejas">Gavėjas</option></select
+    ><br />
+
+    <h2>Sąskaitos faktūra</h2>
+    <label for="reikalinga_saskaita">Reikalinga sąskaitos faktūra:</label>
+    <input
+      type="checkbox"
+      id="reikalinga_saskaita"
+      name="reikalinga_saskaita"
+    /><br />
+
+    <div id="invoice_fields">
+      <label for="pavadinimas_vardas_pavarde"
+        >Pavadinimas arba vardas pavardė:</label
+      >
+      <input
+        type="text"
+        id="pavadinimas_vardas_pavarde"
+        name="pavadinimas_vardas_pavarde"
+      /><br />
+
+      <label for="imones_kodas">Įmonės kodas:</label>
+      <input type="text" id="imones_kodas" name="imones_kodas" /><br />
+
+      <label for="invoice_el_pastas">El.paštožastas:</label>
+      <input
+        type="email"
+        id="invoice_el_pastas"
+        name="invoice_el_pastas"
+      /><br />
+    </div>
+
+    <h2>Pirkti prekes</h2>
+    <label for="pirkti_prekes">Pirkti prekes:</label>
+    <input type="checkbox" id="pirkti_prekes" name="pirkti_prekes" /><br />
+
+    <div id="item_fields">
+      <label for="prekes_pavadinimas">Prekės pavadinimas:</label>
+      <input
+        type="text"
+        id="prekes_pavadinimas"
+        name="prekes_pavadinimas"
+      /><br />
+
+      <label for="prekes_kaina">Kaina:</label>
+      <input type="number" id="prekes_kaina" name="prekes_kaina" /><br />
+
+      <label for="prekes_valiuta">Valiuta:</label>
+      <input type="text" id="prekes_valiuta" name="prekes_valiuta" /><br />
+    </div>
+
+    <input type="submit" value="Submit" />
+    <script>
+      function addAdditionalShipment() {
+        const additionalShipmentsContainer = document.getElementById(
+          "additional_shipments"
+        );
+        const shipmentCount =
+          additionalShipmentsContainer.getElementsByClassName(
+            "additional-shipment"
+          ).length + 1;
+
+        const additionalShipmentDiv = document.createElement("div");
+        additionalShipmentDiv.classList.add("additional-shipment");
+
+        const shipmentWeightLabel = document.createElement("label");
+        shipmentWeightLabel.textContent = `Siuntos svoris ${shipmentCount}:`;
+
+        const shipmentWeightInput = document.createElement("input");
+        shipmentWeightInput.type = "number";
+        shipmentWeightInput.name = `papildoma_siunta_svoris_${shipmentCount}`;
+        shipmentWeightInput.required = true;
+
+        const removeShipmentButton = document.createElement("button");
+        removeShipmentButton.textContent = "-";
+        removeShipmentButton.type = "button";
+        removeShipmentButton.addEventListener("click", () => {
+          additionalShipmentsContainer.removeChild(additionalShipmentDiv);
+        });
+
+        additionalShipmentDiv.appendChild(shipmentWeightLabel);
+        additionalShipmentDiv.appendChild(shipmentWeightInput);
+        additionalShipmentDiv.appendChild(removeShipmentButton);
+
+        additionalShipmentsContainer.appendChild(additionalShipmentDiv);
+      }
+    </script>
+  </body>
+</html>

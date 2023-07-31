@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       totalVolume = 0;
       totalWeight = 0;
-      itemCart = {}; 
+      itemCart = {};
       updateTotal();
       const existingList = document.getElementById("item-list");
       if (existingList) {
@@ -67,10 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
         radioLabel.textContent = `${variation.name} (Tūris: ${variation.volume}m3, Svoris: ${variation.weight}kg, Matmenys: ilgis:${variation.dimensions.length}m, plotis:${variation.dimensions.width}m, aukštis:${variation.dimensions.height}m)`;
 
         const radio = document.createElement("input");
-        const itemCountElement = document.createElement("span"); 
-        itemCountElement.className = "item-count"; 
+        const itemCountElement = document.createElement("span");
+        itemCountElement.className = "item-count";
         radio.type = "radio";
-        radio.name = item.name; 
+        radio.name = item.name;
         radio.value = index;
         radio.addEventListener("change", function () {
           const selectedVariationIndex = radio.value;
@@ -167,15 +167,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateQuantity(quantityLabel, quantity, itemName, variationIndex) {
     quantityLabel.textContent = " Kiekis: " + quantity;
-    const itemCountElements = document.querySelectorAll(".item-count"); 
+    const itemCountElements = document.querySelectorAll(".item-count");
     itemCountElements.forEach((itemCountElement) => {
       if (
-        itemCountElement.parentNode.querySelector("input").name === itemName && 
+        itemCountElement.parentNode.querySelector("input").name === itemName &&
         itemCountElement.parentNode.querySelector("input").value ==
           variationIndex
       ) {
         itemCountElement.textContent =
-          quantity > 0 ? ` (Krepšelyje: ${quantity})` : ""; 
+          quantity > 0 ? ` (Krepšelyje: ${quantity})` : "";
       }
     });
   }

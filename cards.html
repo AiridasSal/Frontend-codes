@@ -1,0 +1,203 @@
+<style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    h3 {
+      color: white !important;
+      font-size: 1.2em;
+      padding-top: 10px;
+      min-height: 2.4em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding-bottom: 10px;
+      text-align: center;
+      border-radius: 6px;
+      background-color: #222329;
+    }
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .card .img5 {
+      object-position: bottom center;
+    }
+    .card .img1 {
+      object-position: bottom left;
+    }
+    .card .img2 {
+      object-position: top right;
+    }
+    .card .img6 {
+      object-position: right center;
+    }
+  
+    .container a {
+      padding: 5px;
+      margin: 0 auto;
+      color: white;
+      background-color: #94a53a;
+      width: 65%;
+    }
+    @media screen and (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      h3 {
+        font-size: 1em;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+    ul {
+      list-style-type: none;
+      text-align: left;
+      color: white;
+      padding: 0 10px 5px 10px;
+      margin-bottom: 15px;
+      margin-left: 20px;
+      text-align: left;
+    }
+    .container a:hover {
+      color: #94a53a;
+      background-color: white;
+    }
+    .container ul li::before {
+      content: "✔️";
+      color: red;
+      font-size: 20px;
+      margin-right: 5px;
+    }
+    .image-container {
+      position: relative;
+  }
+  
+  .image-text {
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px; 
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5); 
+      padding: 10px;
+  }
+  
+  </style>
+  <div class="container">
+    <div class="card">
+      <div class="image-container">
+      <img
+        class="img1"
+        src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://ecotrip.lt/wp-content/uploads/2019/11/IMG_20190621_122729_323.jpg"
+        alt="KROVINIŲ PERVEŽIMAS"
+      />
+      <div class="image-text">LIETUVA</div>
+  </div>
+      <h3>PERKRAUSTYMO PASLAUGA</h3>
+      <ul>
+        <li>Negabaritinės siuntos ir kroviniai</li>
+        <li>Greitas pristatymas</li>
+        <li>Nuo durų iki durų</li>
+      </ul>
+      <a href="https://ecotrip.lt/perkraustymo-paslaugos/">SUŽINOTI DAUGIAU</a>
+    </div>
+    <div class="card">
+      <div class="image-container">
+      <img
+        class="img2"
+        src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://ecotrip.lt/wp-content/uploads/2023/02/kroviniu-pervezimas-scaled-e1675353299147.jpg"
+        alt="SIUNTŲ IR KROVINIŲ PERVEŽIMAS"
+      />
+      <div class="image-text">LIETUVA</div>
+      </div>
+      <h3>KROVINIŲ PERVEŽIMAS</h3>
+      <ul>
+        <li>Svoris sutartinis</li>
+        <li>Nuo durų iki durų</li>
+        <li>Kroviniai draudržiami CMR</li>
+      </ul>
+      <a href="https://ecotrip.lt/kroviniu-pervezimas/">SUŽINOTI DAUGIAU</a>
+    </div>
+    <div class="card">
+        <div class="image-container">
+      <img
+        class="img3"
+        src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://ecotrip.lt/wp-content/uploads/2019/07/Stiprybes.jpg"
+        alt="PRISTATYMAS IŠ PARDUOTUVIŲ"
+      />
+      <div class="image-text">LIETUVA</div>
+      </div>
+      <h3>PRISTATYMAS IŠ PARDUOTUVIŲ</h3>
+      <ul>
+        <li>Svoris sutartinis</li>
+        <li>Nuo durų iki durų</li>
+        <li>Prekių užnešimas</li>
+      </ul>
+      <a href="https://ecotrip.lt/pristatymas-is-parduotuviu/">SUŽINOTI DAUGIAU</a>
+    </div>
+    <div class="card">
+        <div class="image-container">
+      <img
+        class="img4"
+        src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://ecotrip.lt/wp-content/uploads/2019/11/IMG_20190621_122729_323.jpg"
+        alt="KROVINIŲ PERVEŽIMAS"
+      />
+      <div class="image-text">LIETUVA - ANGLIJA - LIETUVA</div>
+      </div>
+      <h3>KROVINIŲ PERVEŽIMAS</h3>
+      <ul>
+        <li>Svoris nuo 40 kg</li>
+        <li>Nuo durų iki durų</li>
+        <li>Kroviniai draudžiami CMR</li>
+      </ul>
+      <a href="https://ecotrip.lt/kroviniu-pervezimas/">SUŽINOTI DAUGIAU</a>
+    </div>
+    <div class="card">
+        <div class="image-container">
+      <img
+        class="img5"
+        src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://ecotrip.lt/wp-content/uploads/2019/11/IMG_20190903_092208_443.jpg"
+        alt="SIUNTŲ GABENIMAS"
+      />
+      <div class="image-text">LIETUVA - ANGLIJA - LIETUVA</div>
+      </div>
+      <h3>SIUNTŲ GABENIMAS</h3>
+      <ul>
+        <li>35 €/£ siuntos svoris iki 5 kg</li>
+        <li>40 €/£ siuntos svoris iki 30 kg</li>
+        <li>Nuo durų iki durų</li>
+      </ul>
+      <a href="https://ecotrip.lt/siuntu-pristatymas/">SUŽINOTI DAUGIAU</a>
+    </div>
+    <div class="card">
+        <div class="image-container">
+      <img
+        class="img6"
+        src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://ecotrip.lt/wp-content/uploads/2023/02/perkraustymo-paslaugos-scaled-e1675353145658.jpg"
+        alt="KRAUSTYMO PASLAUGOS"
+      />
+      <div class="image-text">LIETUVA - ANGLIJA - LIETUVA</div>
+      </div>
+      <h3>KRAUSTYMO PASLAUGOS</h3>
+      <ul>
+        <li>Sutartinės kainos</li>
+        <li>Nuo durų iki durų</li>
+        <li>Krovėjų paslaugos</li>
+      </ul>
+      <a href="https://ecotrip.lt/perkraustymo-paslaugos/">SUŽINOTI DAUGIAU</a>
+    </div>
+  </div>
+  
